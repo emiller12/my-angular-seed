@@ -1,10 +1,12 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		clean: {
-			build: ['build']
+			all: ['build'],
+			src: ['build/src'],
+			unit: ['build/test/unit']
 		},
 		copy: {
-			all: {
+			src: {
 				files:[
 					{
 						expand: true,
@@ -20,7 +22,17 @@ module.exports = function(grunt) {
 						filter: 'isFile'
 					}
 				]
-
+			},
+			unit: {
+				files: [
+					{
+						expand: true,
+						src: 'test/unit/**/*',
+						dest: 'build/',
+						flatten: false,
+						filter: 'isFile'
+					}
+				]
 			},
 			one: {
 				files: []
@@ -30,6 +42,10 @@ module.exports = function(grunt) {
 			src: {
 				tsconfig: './build/src/tsconfig.json',
 				src: ["build/src/**/*.ts"]
+			},
+			unit: {
+				tsconfig: './build/test/unit/tsconfig.json',
+				src: ["build/test/unit/**/*.ts"]
 			},
 			one: {
 				tsconfig: './build/src/tsconfig.json',
@@ -79,6 +95,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks("grunt-ts");
 
-	grunt.registerTask("build", ["clean:build", "copy:all", "ts:src"]);
+	grunt.registerTask("copy:all", ["copy:src", "copy:unit"]);
+	grunt.registerTask("ts:all", ["ts:src", "ts:unit"]);
+
+	grunt.registerTask("build:all", ["clean:all", "copy:all", "ts:all"]);
+	grunt.registerTask("build", ["clean:src", "copy:src", "ts:src"]);
+	grunt.registerTask("build:unit", ["clean:unit", "copy:unit", "ts:unit"]);
 	grunt.registerTask("default", ["build"]);
 };

@@ -1,11 +1,9 @@
 module.exports = function(config) {
 
-	var appBase    = 'src/';       // transpiled app JS and map files
-	var appSrcBase = appBase;      // app source TS files
+	var appBase    = 'build/src/'; // transpiled app JS and map files
 
 	// Testing helpers (optional) are conventionally in a folder called `testing`
-	var testingBase    = 'test/'; // transpiled test JS and map files
-	var testingSrcBase = 'test/'; // test source TS files
+	var testingBase    = 'build/test/unit/'; // transpiled test JS and map files
 
 	config.set({
 		basePath: '',
@@ -73,15 +71,15 @@ module.exports = function(config) {
 			// Paths for debugging with source maps in dev tools
 			{ pattern: appBase + '**/*.ts', included: false, watched: false },
 			{ pattern: appBase + '**/*.js.map', included: false, watched: false },
-			{ pattern: testingSrcBase + '**/*.ts', included: false, watched: false },
+			{ pattern: testingBase + '**/*.ts', included: false, watched: false },
 			{ pattern: testingBase + '**/*.js.map', included: false, watched: false}
 		],
 
 		// Proxied base paths for loading assets
 		proxies: {
 			// required for modules fetched by SystemJS
-			'/base/src/node_modules/': '/base/node_modules/',
-			'/app/': '/base/src/app/'
+			'/base/build/src/node_modules/': '/base/node_modules/',
+			'/app/': '/base/build/src/app/'
 		},
 
 		exclude: [],
@@ -91,8 +89,8 @@ module.exports = function(config) {
 		port: 9876,
 		colors: true,
 		logLevel: config.LOG_INFO,
-		autoWatch: true,
+		autoWatch: false,
 		browsers: ['Chrome'],
-		singleRun: false
+		singleRun: true
 	})
 };

@@ -11,9 +11,7 @@
     "e2e": "concurrently \"npm run serve:e2e\" \"npm run protractor\" --kill-others --success first",
     "webdriver:update": "webdriver-manager update",
     "protractor": "protractor protractor.config.js",
-    "test": "concurrently \"npm run build:watch\" \"karma start karma.conf.js\"",
-    "pretest:once": "npm run build",
-    "test:once": "karma start karma.conf.js --single-run",
+    "karma": "karma start karma.conf.js --single-run",
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
