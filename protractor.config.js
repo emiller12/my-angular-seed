@@ -27,7 +27,7 @@ exports.config = {
   framework: 'jasmine',
 
   // Spec patterns are relative to this config file
-  specs: ['test/e2e/**/*e2e-spec.js' ],
+  specs: ['build/test/e2e/**/*e2e-spec.js' ],
 
 
   // For angular tests
@@ -66,7 +66,7 @@ exports.config = {
 
 // Custom reporter
 function Reporter(options) {
-  var _defaultOutputFile = path.resolve(process.cwd(), './test/e2e/_test-output', 'protractor-results.txt');
+  var _defaultOutputFile = path.resolve(process.cwd(), './build/test/e2e/_test-output', 'protractor-results.txt');
   options.outputFile = options.outputFile || _defaultOutputFile;
 
   initOutputFile(options.outputFile);

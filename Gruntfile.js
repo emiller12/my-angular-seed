@@ -3,7 +3,8 @@ module.exports = function(grunt) {
 		clean: {
 			all: ['build'],
 			src: ['build/src'],
-			unit: ['build/test/unit']
+			unit: ['build/test/unit'],
+			e2e: ['build/test/e2e']
 		},
 		copy: {
 			src: {
@@ -34,6 +35,17 @@ module.exports = function(grunt) {
 					}
 				]
 			},
+			e2e: {
+				files: [
+					{
+						expand: true,
+						src: 'test/e2e/**/*',
+						dest: 'build/',
+						flatten: false,
+						filter: 'isFile'
+					}
+				]
+			},
 			one: {
 				files: []
 			}
@@ -46,6 +58,10 @@ module.exports = function(grunt) {
 			unit: {
 				tsconfig: './build/test/unit/tsconfig.json',
 				src: ["build/test/unit/**/*.ts"]
+			},
+			e2e: {
+				tsconfig: './build/test/e2e/tsconfig.json',
+				src: ["build/test/e2e/**/*.ts"]
 			},
 			one: {
 				tsconfig: './build/src/tsconfig.json',
@@ -95,11 +111,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks("grunt-ts");
 
-	grunt.registerTask("copy:all", ["copy:src", "copy:unit"]);
-	grunt.registerTask("ts:all", ["ts:src", "ts:unit"]);
+	grunt.registerTask("copy:all", ["copy:src", "copy:unit", "copy:e2e"]);
+	grunt.registerTask("ts:all", ["ts:src", "ts:unit", "ts:e2e"]);
 
 	grunt.registerTask("build:all", ["clean:all", "copy:all", "ts:all"]);
 	grunt.registerTask("build", ["clean:src", "copy:src", "ts:src"]);
 	grunt.registerTask("build:unit", ["clean:unit", "copy:unit", "ts:unit"]);
+	grunt.registerTask("build:e2e", ["clean:e2e", "copy:e2e", "ts:e2e"]);
 	grunt.registerTask("default", ["build"]);
 };
