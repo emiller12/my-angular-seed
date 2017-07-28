@@ -1,7 +1,7 @@
 {
-  "name": "angular-quickstart",
+  "name": "my-angular-seed",
   "version": "1.0.0",
-  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "description": "Another seed project of Angular applications. Based off the offical Angular quickstart project.",
   "scripts": {
     "build": "grunt build",
     "build:unit": "tsc -p test/unit/",
@@ -17,7 +17,7 @@
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
-  "author": "",
+  "author": "Elliott Miller",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "~4.3.2",
