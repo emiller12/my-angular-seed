@@ -1,8 +1,9 @@
 {
-  "server": {
-    "baseDir": "build/src",
-    "routes": {
-      "/node_modules": "node_modules"
-    }
-  }
+	"server": {
+		"baseDir": "build/src",
+		"routes": {
+			"/node_modules": "node_modules",
+			"/bower_components": "bower_components"
+		}
+	}
 }

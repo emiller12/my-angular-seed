@@ -1,16 +1,30 @@
-<p>
-	Some more stuff from another component
-</p>
-<p>The animals are:</p>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Type</th>
-	</tr>
-	<tr *ngFor="let animal of animals">
-		<td>{{animal.name}}</td>
-		<td>{{animal.type}}</td>
-	</tr>
-</table>
+<div class="row">
+	<div class="col-xs-12">
+		<p>
+			Some more stuff from another component
+		</p>
+		<p>The animals are:</p>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+			</tr>
+			<tr *ngFor="let animal of animals">
+				<td>{{animal.name}}</td>
+				<td>{{animal.type}}</td>
+			</tr>
+		</table>
 
-<p>Today's Animal of the Day is: {{animalOfTheDay.name}}, who is a {{animalOfTheDay.type}}</p>
+		<p>Today's Animal of the Day is: {{animalOfTheDay.name}}, who is a {{animalOfTheDay.type}}</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+		<p>Some responsive stuff</p>
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<p>Some more responsive stuff</p>
+	</div>
+</div>

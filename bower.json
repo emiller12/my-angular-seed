@@ -1,0 +1,21 @@
+{
+  "name": "my-angular-seed",
+  "description": "Another seed project of Angular applications. Based off the offical Angular quickstart project.",
+  "main": "",
+  "authors": [
+    "Elliott Miller"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/emiller12/my-angular-seed",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "build"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

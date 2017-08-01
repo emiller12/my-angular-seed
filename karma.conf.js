@@ -58,6 +58,15 @@ module.exports = function(config) {
 			{ pattern: appBase + '/systemjs.config.extras.js', included: false, watched: false },
 			'karma-test-shim.js', // optionally extend SystemJS mapping e.g., with barrels
 
+			// lodash
+			{ pattern: 'node_modules/lodash/**/*.js', included: false, watched: false },
+
+			// Bootstrap
+			{ pattern: 'bower_components/bootstrap/dist/**/*.js', included: false, watched: false },
+
+			// Jquery
+			{ pattern: 'bower_components/jquery/dist/**/*.js', included: false, watched: false },
+
 			// transpiled application & spec code paths loaded via module imports
 			{ pattern: appBase + '**/*.js', included: false, watched: true },
 			{ pattern: testingBase + '**/*.js', included: false, watched: true },
@@ -79,6 +88,7 @@ module.exports = function(config) {
 		proxies: {
 			// required for modules fetched by SystemJS
 			'/base/build/src/node_modules/': '/base/node_modules/',
+			'/base/build/src/bower_components/': '/base/bower_components/',
 			'/app/': '/base/build/src/app/'
 		},
 
