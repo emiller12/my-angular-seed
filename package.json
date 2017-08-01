@@ -1,7 +1,7 @@
 {
   "name": "my-angular-seed",
   "version": "1.0.0",
-  "description": "Another seed project of Angular applications. Based off the offical Angular quickstart project.",
+  "description": "Another seed project for Angular applications. Based off the offical Angular quickstart project.",
   "scripts": {
     "build": "grunt build",
     "build:unit": "grunt build:unit",
@@ -30,7 +30,8 @@
     "core-js": "^2.4.1",
     "rxjs": "5.0.1",
     "systemjs": "0.19.40",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+				"lodash": "^4.17.4"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.36",
@@ -49,7 +50,6 @@
     "karma-jasmine": "^1.0.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "lite-server": "^2.2.2",
-    "lodash": "^4.17.4",
     "protractor": "~4.0.14",
     "tslint": "^3.15.1",
     "typescript": "~2.3.3"
